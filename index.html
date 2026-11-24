@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#173f35">
+<title>La sfida del presente | Italiano A1–A2</title>
+<style>
+:root{--green:#173f35;--green2:#245b4b;--cream:#f7f4ec;--paper:#fffefa;--ink:#202a26;--muted:#69756f;--orange:#e9a45b;--line:#e6e2d8;--red:#b84e43;--shadow:0 16px 45px rgba(28,53,43,.10)}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+header{background:var(--green);color:white;padding:28px 20px 64px;position:relative;overflow:hidden}
+header:after{content:"";position:absolute;width:280px;height:280px;border:1px solid rgba(255,255,255,.14);border-radius:50%;right:-70px;top:-130px;box-shadow:0 0 0 35px rgba(255,255,255,.035),0 0 0 70px rgba(255,255,255,.025)}
+.top{max-width:1050px;margin:auto;position:relative;z-index:1}.eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:.72rem;color:#d8c9a9;font-weight:800}
+h1{font-size:clamp(2rem,5vw,3.6rem);line-height:1.02;margin:13px 0 12px;max-width:720px;letter-spacing:-.04em}
+header p{color:#e2ebe6;margin:0;font-size:1.04rem;max-width:620px;line-height:1.6}
+.pill{display:inline-block;border:1px solid rgba(255,255,255,.3);border-radius:30px;padding:7px 12px;font-size:.78rem;margin-top:20px;color:#fff}
+main{max-width:1050px;margin:-38px auto 0;padding:0 18px 60px;position:relative}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:clamp(18px,4vw,30px);margin-bottom:18px}
+.intro{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center}
+h2{font-size:1.35rem;margin:0 0 8px;letter-spacing:-.02em}h3{margin:0 0 8px;font-size:1rem}
+.muted{color:var(--muted);line-height:1.55}.stats{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.stat{background:#f1f4ef;border-radius:13px;padding:10px 13px;min-width:100px}.stat b{display:block;font-size:1.25rem;color:var(--green)}.stat span{font-size:.72rem;color:var(--muted)}
+.scorebox{background:#f3efe4;border-radius:18px;padding:20px;text-align:center}.score{font-size:2.7rem;font-weight:850;color:var(--green);line-height:1}
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px}
+.tab{border:1px solid var(--line);background:#fffefa;border-radius:15px;padding:15px 12px;text-align:left;cursor:pointer;transition:.2s;color:var(--ink)}
+.tab:hover{transform:translateY(-2px);border-color:#9db7a9}.tab.active{background:var(--green);border-color:var(--green);color:white}
+.tab strong{display:block;font-size:.88rem}.tab small{opacity:.72;font-size:.73rem}
+.challenge{min-height:260px;display:flex;flex-direction:column;justify-content:space-between}
+.challenge-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.tag{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;font-weight:800;color:var(--green2);background:#e9f0e9;padding:7px 10px;border-radius:30px}
+.counter{font-size:.78rem;color:var(--muted)}
+.prompt{font-size:clamp(1.45rem,3.8vw,2.25rem);line-height:1.22;font-weight:800;letter-spacing:-.035em;margin:28px 0;max-width:780px}
+.hint{color:var(--muted);font-size:.9rem;min-height:24px}
+.actions{display:flex;gap:10px;flex-wrap:wrap}
+button{font:inherit;cursor:pointer;border:0;border-radius:12px;padding:12px 17px;font-weight:750;transition:.18s}
+button:hover{transform:translateY(-1px)}button:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+.primary{background:var(--green);color:white}.secondary{background:#edf1ec;color:var(--green)}.outline{background:transparent;border:1px solid var(--line);color:var(--ink)}.warm{background:#f5e6d3;color:#70451d}
+button:disabled{opacity:.45;cursor:not-allowed;transform:none}
+.answer{display:none;margin-top:16px;padding:15px 17px;background:#f1f5ef;border-left:4px solid #6e9a7d;border-radius:10px;line-height:1.6}
+.answer.show{display:block}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.task{border:1px solid var(--line);border-radius:15px;padding:16px;background:#fff}
+.task p{margin:8px 0 0;color:var(--muted);font-size:.9rem;line-height:1.5}
+.task b{color:var(--green)}
+details{border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:#fff;margin-top:10px}
+summary{cursor:pointer;font-weight:750;color:var(--green)}
+ol{padding-left:22px;line-height:1.9}li{padding-left:4px}
+.footer{text-align:center;color:var(--muted);font-size:.78rem;padding:12px}
+@media(max-width:700px){.intro{grid-template-columns:1fr}.tabs{grid-template-columns:1fr}.tab{display:flex;justify-content:space-between;align-items:center}.grid{grid-template-columns:1fr}.challenge{min-height:300px}}
+</style>
+</head>
+<body>
+<header><div class="top">
+<div class="eyebrow">Italiano per stranieri · A1–A2</div>
+<h1>La sfida del<br>presente!</h1>
+<p>Una missione interattiva per ripassare il presente indicativo, parlare della quotidianità e mettere alla prova la tua velocità.</p>
+<span class="pill">🎯 3 categorie · domande casuali · punti</span>
+</div></header>
+<main>
+<section class="panel intro">
+<div>
+<h2>Pronto a giocare?</h2>
+<p class="muted">Scegli una categoria, pesca una missione e rispondi in italiano. Puoi giocare individualmente con l'insegnante oppure sfidare un compagno. Cerca di costruire frasi complete!</p>
+<div class="stats"><div class="stat"><b>3</b><span>categorie</span></div><div class="stat"><b>24</b><span>missioni</span></div><div class="stat"><b>A1–A2</b><span>livello</span></div></div>
+</div>
+<div class="scorebox"><div class="muted" style="font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em">Punteggio</div><div class="score" id="score">0</div><div class="muted" style="font-size:.8rem">punti conquistati</div><button class="secondary" id="resetScore" style="margin-top:14px">Azzera punti</button></div>
+</section>
+
+<section class="panel">
+<h2>Scegli la tua missione</h2>
+<p class="muted">Ogni missione appare una sola volta finché non esaurisci la categoria.</p>
+<div class="tabs" role="tablist">
+<button class="tab active" data-cat="conj"><strong>01 · CONIUGA</strong><small>Coniuga e crea una frase</small></button>
+<button class="tab" data-cat="translate"><strong>02 · TRADUCI</strong><small>Dal portoghese all'italiano</small></button>
+<button class="tab" data-cat="speak"><strong>03 · PARLA!</strong><small>Rispondi e improvvisa</small></button>
+</div>
+<div class="challenge">
+<div class="challenge-top"><span class="tag" id="categoryLabel">Coniuga</span><span class="counter" id="counter">Pronto · 8 missioni</span></div>
+<div>
+<div class="prompt" id="prompt" aria-live="polite">Clicca su “Pesca una missione” per iniziare.</div>
+<div class="hint" id="hint">Rispondi ad alta voce. Poi chiedi all'insegnante di verificare la risposta.</div>
+<div class="answer" id="answer"></div>
+</div>
+<div class="actions">
+<button class="primary" id="draw">🎲 Pesca una missione</button>
+<button class="secondary" id="showAnswer" disabled>Mostra aiuto</button>
+<button class="warm" id="award" disabled>+1 punto</button>
+<button class="outline" id="skip" disabled>Salta</button>
+</div>
+</div>
+</section>
+
+<section class="panel">
+<h2>Come si gioca?</h2>
+<div class="grid">
+<div class="task"><b>1. Pesca</b><p>Scegli una delle tre categorie e pesca una missione casuale.</p></div>
+<div class="task"><b>2. Rispondi</b><p>Parla in italiano. Per le missioni di coniugazione, crea anche una frase completa.</p></div>
+<div class="task"><b>3. Guadagna punti</b><p>Conquista un punto se la risposta è corretta e completa. L'insegnante decide quando assegnarlo.</p></div>
+<div class="task"><b>4. Continua</b><p>Le missioni già pescate non si ripetono fino a quando la categoria non viene rimescolata.</p></div>
+</div>
+</section>
+
+<section class="panel">
+<h2>Altre sfide per l'insegnante</h2>
+<details><summary>Trova e correggi · Correggi l'errore</summary>
+<ol>
+<li>Io sono 30 anni. → <b>Io ho 30 anni.</b></li>
+<li>Lei vado al supermercato. → <b>Lei va al supermercato.</b></li>
+<li>Loro esce tutte le sere. → <b>Loro escono tutte le sere.</b></li>
+<li>Io non capisci. → <b>Io non capisco.</b></li>
+<li>Voi siete fame? → <b>Voi avete fame?</b></li>
+<li>Lui si svegliano presto. → <b>Lui si sveglia presto.</b></li>
+<li>Mi piace molto i film italiani. → <b>Mi piacciono molto i film italiani.</b></li>
+<li>Noi andiamo al cinema e poi mangiamo una pizza. → <b>Frase corretta!</b></li>
+</ol></details>
+<details><summary>Intervista · Conosci il tuo compagno</summary>
+<p class="muted">Fai almeno una domanda per ogni argomento e poi presenta il tuo compagno usando la terza persona.</p>
+<ul><li>Routine: A che ora ti svegli? Cosa fai la mattina?</li><li>Gusti: Che cosa ti piace mangiare? Preferisci il tè o il caffè?</li><li>Famiglia: Hai fratelli o sorelle?</li><li>Lavoro e studio: Dove lavori? Che cosa studi?</li><li>Tempo libero: Cosa fai nel fine settimana?</li></ul>
+</details>
+<details><summary>Mini ripasso · Che cosa osservare?</summary>
+<p class="muted">Verifica se lo studente sa usare:</p>
+<ul><li>Verbi regolari in -are, -ere, -ire.</li><li>Essere, avere, andare, fare, stare, venire, uscire.</li><li>Verbi riflessivi: svegliarsi, alzarsi, vestirsi.</li><li>Piacere: mi piace / mi piacciono.</li><li>Domande e negazione con non.</li></ul>
+</details>
+</section>
+<div class="footer">La sfida del presente · Materiale didattico modificabile · Italiano A1–A2</div>
+</main>
+<script>
+const decks={
+conj:[
+["Io + andare","Coniuga il verbo e crea una frase con “io”.","Io vado. Esempio: Io vado al lavoro in autobus."],
+["Tu + avere","Coniuga il verbo e crea una domanda.","Tu hai. Esempio: Tu hai fratelli?"],
+["Lei + fare","Coniuga il verbo e crea una frase.","Lei fa. Esempio: Lei fa colazione alle otto."],
+["Noi + uscire","Coniuga il verbo e crea una frase.","Noi usciamo. Esempio: Noi usciamo il sabato."],
+["Loro + venire","Coniuga il verbo e crea una frase.","Loro vengono. Esempio: Loro vengono a casa nostra."],
+["Voi + essere","Coniuga il verbo e crea una domanda.","Voi siete. Esempio: Voi siete italiani?"],
+["Io + capire","Coniuga il verbo e crea una frase negativa.","Io capisco. Esempio: Io non capisco questa parola."],
+["Tu + volere","Coniuga il verbo e crea una frase.","Tu vuoi. Esempio: Tu vuoi un caffè?"]
+],
+translate:[
+["Eu acordo às 7 horas.","Traduci in italiano. Attenzione al verbo riflessivo.","Mi sveglio alle sette."],
+["Nós vamos ao trabalho.","Traduci in italiano.","Noi andiamo al lavoro."],
+["Ela gosta de viajar.","Traduci in italiano. Attenzione a “piacere”.","A lei piace viaggiare."],
+["Você tem irmãos?","Traduci in italiano.","Hai fratelli? / Tu hai fratelli?"],
+["Eles fazem academia.","Traduci in italiano.","Loro fanno palestra."],
+["Eu não entendo.","Traduci in italiano.","Non capisco."],
+["Vocês saem aos sábados?","Traduci in italiano.","Uscite il sabato? / Voi uscite il sabato?"],
+["Ele mora em Roma.","Traduci in italiano.","Lui abita a Roma. / Lui vive a Roma."]
+],
+speak:[
+["Descrivi la tua routine.","Usa almeno 5 verbi al presente. Inizia da quando ti svegli.","Mi sveglio..., faccio colazione..., poi..."],
+["Parla della tua famiglia.","Usa essere, avere e almeno due aggettivi.","La mia famiglia è... Ho..."],
+["Cosa fai nel tempo libero?","Parla di almeno tre attività e usa “mi piace”.","Nel tempo libero mi piace..."],
+["Descrivi la tua casa.","Usa c'è / ci sono e indica dove si trovano le stanze.","A casa mia c'è... Ci sono..."],
+["Cosa ti piace mangiare?","Nomina tre cibi e spiega cosa preferisci.","Mi piace... Preferisco..."],
+["Parla del tuo lavoro o dei tuoi studi.","Usa lavorare o studiare e descrivi una giornata tipica.","Lavoro / studio... Ogni giorno..."],
+["Descrivi la tua città.","Parla dei luoghi, dei trasporti e di cosa si può fare.","Nella mia città c'è... Si può..."],
+["Cosa fai la domenica?","Racconta una domenica tipica usando almeno quattro verbi.","La domenica mi sveglio..."]
+]};
+const labels={conj:"Coniuga",translate:"Traduci",speak:"Parla!"};
+let category="conj", remaining={}, current=null, score=0, used=0;
+Object.keys(decks).forEach(k=>remaining[k]=[...decks[k].keys()]);
+const $=id=>document.getElementById(id);
+function shuffle(a){for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function updateCounter(){let total=decks[category].length, left=remaining[category].length;$("counter").textContent=`${used} pescate · ${left} di ${total} rimaste`;}
+function choose(cat){category=cat;document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b.dataset.cat===cat));$("categoryLabel").textContent=labels[cat];current=null;$("prompt").textContent="Clicca su “Pesca una missione” per iniziare."; $("hint").textContent="Rispondi ad alta voce. Poi chiedi all'insegnante di verificare la risposta.";$("answer").classList.remove("show");$("answer").textContent="";$("showAnswer").disabled=$("award").disabled=$("skip").disabled=true;used=0;updateCounter();}
+function draw(){if(!remaining[category].length){remaining[category]=shuffle([...decks[category].keys()]);$("hint").textContent="Hai completato la categoria! Le missioni sono state rimescolate.";used=0;}
+let idx=remaining[category].pop();current=decks[category][idx];$("prompt").textContent=current[0];$("hint").textContent=current[1];$("answer").textContent="💡 "+current[2];$("answer").classList.remove("show");$("showAnswer").disabled=$("award").disabled=$("skip").disabled=false;updateCounter();}
+document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>choose(b.dataset.cat)));
+$("draw").addEventListener("click",()=>{if(current)used++;draw();});
+$("showAnswer").addEventListener("click",()=>{$("answer").classList.toggle("show");});
+$("award").addEventListener("click",()=>{score++;$("score").textContent=score;$("award").disabled=true;$("hint").textContent="Bravo! Punto assegnato. Pesca la prossima missione.";});
+$("skip").addEventListener("click",()=>{current=null;$("prompt").textContent="Missione saltata. Pesca la prossima!";$("answer").classList.remove("show");$("showAnswer").disabled=$("award").disabled=$("skip").disabled=true;});
+$("resetScore").addEventListener("click",()=>{score=0;$("score").textContent=score;});
+updateCounter();
+</script>
+</body></html>
